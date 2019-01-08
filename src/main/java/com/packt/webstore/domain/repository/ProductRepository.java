@@ -6,4 +6,6 @@ public interface ProductRepository {
 	
 	List <Product> getAllProducts();  //atrapa repozytorium przechowywuj¹ca obiekty w pamiêci RAM
 	Product getProductById(String productId);
+	List<Product> getProductsByCategory(String category);
+	
 }
