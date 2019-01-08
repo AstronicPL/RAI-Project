@@ -10,8 +10,8 @@
       <section>
          <div class="jumbotron">
             <div class="container">
-               <h1>Produkty</h1>
-               <p>Wszystkie produkty dostępne w naszym sklepie</p>
+               <h1>Witaj</h1>
+               <p>Wszystkie produkty dostępne w naszym sklepie:</p>
             </div>
          </div>
       </section>
