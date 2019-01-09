@@ -1,9 +1,10 @@
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 <html>
    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="UTF-8">
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
       <title>Produkt</title>
    </head>
@@ -30,14 +31,14 @@
                   <strong>Kategoria</strong>: ${product.category}
                </p>
                <p>
-                  <strong>Dostêpna liczba sztuk</strong>:${product.unitsInStock}
+                  <strong>DostÄ™pna liczba sztuk</strong>:${product.unitsInStock}
                </p>
 
                <h4>${product.unitPrice}PLN</h4>
 			     <p>
                   <a href="#" class="btn btn-warning btn-large"> 
                      <span class="glyphicon-shopping-cart glyphicon"></span> 
-                     Zamów teraz
+                     ZamÃ³w teraz
                   </a>
                </p>
 			   <a href="<spring:url value="/products" />" class="btn btndefault">
