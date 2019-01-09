@@ -7,7 +7,7 @@
    </head>
    <body>
    <section>
-         <div class="jumbotron">
+         <div class="jumbotron" style="background-color: yellow">
             <div class="container">
                <h1> ${greeting} </h1>
                <p> ${tagline} </p>

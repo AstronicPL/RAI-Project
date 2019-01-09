@@ -18,8 +18,8 @@ public class InMemoryProductRepository implements ProductRepository{
 
    public InMemoryProductRepository() {
       
-      Product iphone = new Product("P1234","iPhone 5s", new BigDecimal(500));
-      iphone.setDescription("Apple iPhone 5s, smartfon z 4-calowym ekranem o rozdzielczoœci 640×1136 i 8-megapikselowym aparatem");
+      Product iphone = new Product("P1234","iPhone X", new BigDecimal(500));
+      iphone.setDescription("Apple iPhone X, smartfon z 5,8-calowym ekranem o rozdzielczoœci FHD i 1231-megapikselowym aparatem");
       iphone.setCategory("Smartfon");
       iphone.setManufacturer("Apple");
       iphone.setUnitsInStock(1000);
@@ -35,9 +35,15 @@ public class InMemoryProductRepository implements ProductRepository{
       tablet_Nexus.setManufacturer("Google");
       tablet_Nexus.setUnitsInStock(1000);
 
+      Product komputer_Tesla = new Product ("P1237","Tesla GAMER", new BigDecimal(4500));
+      komputer_Tesla.setDescription("Komputer skierowany dla prawdziwych graczy i hardkorowych amatorów excela");
+      komputer_Tesla.setCategory("Komputer");
+      komputer_Tesla.setManufacturer("X-KOM");
+      komputer_Tesla.setUnitsInStock(15);
       listOfProducts.add(iphone);
       listOfProducts.add(laptop_dell);
       listOfProducts.add(tablet_Nexus);
+      listOfProducts.add(komputer_Tesla);
    }
 
    public List<Product> getAllProducts() {

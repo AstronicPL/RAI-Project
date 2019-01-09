@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.packt.webstore.domain.Product;
 import com.packt.webstore.domain.repository.ProductRepository;
 import com.packt.webstore.service.ProductService;
@@ -41,6 +43,11 @@ public class ProductController {
 	public String getProductsByFilter(@MatrixVariable(pathVar="ByCriteria") Map<String,List<String>> filterParams, Model model) {
 	   model.addAttribute("products", productService.getProductsByFilter(filterParams));
 	   return "products";
+	}
+	@RequestMapping("/product")
+	public String getProductById(@RequestParam("id") String productId, Model model) {
+	   model.addAttribute("product", productService.getProductById(productId));
+	   return "product";
 	}
 	}  
    
