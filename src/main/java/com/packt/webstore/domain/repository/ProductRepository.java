@@ -1,4 +1,5 @@
 package com.packt.webstore.domain.repository;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -6,10 +7,14 @@ import java.util.Set;
 import com.packt.webstore.domain.Product;
 
 public interface ProductRepository {
+
+	List <Product> getAllProducts();
 	
-	List <Product> getAllProducts();  //atrapa repozytorium przechowywuj¹ca obiekty w pamiêci RAM
-	Product getProductById(String productId);
+	Product getProductById(String productID);
+	
 	List<Product> getProductsByCategory(String category);
+
 	Set<Product> getProductsByFilter(Map<String, List<String>> filterParams);
-	void addProduct(Product product);
+	
+	void addProduct(Product product);		
 }
