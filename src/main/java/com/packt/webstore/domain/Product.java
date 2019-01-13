@@ -2,8 +2,13 @@ package com.packt.webstore.domain;
 
 import java.math.BigDecimal;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.springframework.web.multipart.MultipartFile;
 
+@XmlRootElement
 public class Product {
 
 	private String productId;
@@ -106,7 +111,8 @@ public class Product {
 	public void setCondition(String condition) {
 		this.condition = condition;
 	}
-	public MultipartFile getProductImage() {
+	@XmlTransient
+	public @JsonIgnore MultipartFile getProductImage() {		
 		return productImage;
 	}
 
