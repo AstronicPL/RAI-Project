@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -79,9 +80,14 @@ public class ProductController {
 	}
 	   
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String processAddNewProductForm(@ModelAttribute("newProduct") Product productToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
-		String[] suppressedFields = result.getSuppressedFields();
+	public String processAddNewProductForm(
 		
+				
+			@ModelAttribute("newProduct") @Valid Product productToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
+		String[] suppressedFields = result.getSuppressedFields();
+		if(result.hasErrors()) {
+			   return "addProduct";
+			}
 		if (suppressedFields.length > 0) {
 			throw new RuntimeException("Próba wi¹zania niedozwolonych pól: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
 		}
@@ -110,5 +116,9 @@ public class ProductController {
 	   mav.addObject("url", req.getRequestURL()+"?"+req.getQueryString());
 	   mav.setViewName("productNotFound");
 	   return mav;
+	}
+	@RequestMapping("/invalidPromoCode")
+	public String invalidPromoCode() {
+	   return "invalidPromoCode";
 	}
 }
