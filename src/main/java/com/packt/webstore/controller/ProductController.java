@@ -80,10 +80,7 @@ public class ProductController {
 	}
 	   
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String processAddNewProductForm(
-		
-				
-			@ModelAttribute("newProduct") @Valid Product productToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
+	public String processAddNewProductForm(@ModelAttribute("newProduct") @Valid Product productToBeAdded, BindingResult result, HttpServletRequest request) {
 		String[] suppressedFields = result.getSuppressedFields();
 		if(result.hasErrors()) {
 			   return "addProduct";
