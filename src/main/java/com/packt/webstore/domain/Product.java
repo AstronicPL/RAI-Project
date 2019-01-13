@@ -13,9 +13,12 @@ import javax.xml.bind.annotation.XmlTransient;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.packt.webstore.validator.ProductId;
+
 @XmlRootElement
 public class Product {
 	@Pattern(regexp="P[0-9]+", message="{Pattern.Product.productId.validation}")
+	@ProductId
 	private String productId;
 	@Size(min=4, max=50, message="{Size.Product.name.validation}")
 	private String name;
