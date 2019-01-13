@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.packt.webstore.domain.Product;
 import com.packt.webstore.domain.repository.ProductRepository;
+import com.packt.webstore.exception.ProductNotFoundException;
 
 @Repository
 public class InMemoryProductRepository implements ProductRepository{
@@ -48,21 +49,18 @@ public class InMemoryProductRepository implements ProductRepository{
 	}
 
 	public Product getProductById(String productId) {
-		Product productById = null;
-		
-		for(Product product : listOfProducts) {
-			if(product!=null && product.getProductId()!=null && product.getProductId().equals(productId)){
-				productById = product;
-				break;
-			}
+		   Product productById = null;
+		   for(Product product : listOfProducts) {
+		      if(product!=null && product.getProductId()!=null && product.getProductId().equals(productId)){
+		         productById = product;
+		         break;
+		      }
+		   }
+		   if(productById == null){
+		      throw new ProductNotFoundException(productId);
+		   }
+		   return productById;
 		}
-		
-		if(productById == null){
-			throw new IllegalArgumentException("Brak produktu o wskazanym id: "+ productId);
-		}
-		
-		return productById;
-	}
 	
 	public List<Product> getProductsByCategory(String category) {
 		List<Product> productsByCategory = new ArrayList<Product>();
