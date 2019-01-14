@@ -1,2 +1,3 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/packt/webstore/controller/CartRestController.java=UTF-8
 encoding//src/main/java/com/packt/webstore/validator/ProductIdValidator.java=UTF-8

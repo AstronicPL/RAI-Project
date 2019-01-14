@@ -15,13 +15,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.packt.webstore.validator.ProductId;
 
-@XmlRootElement
+@XmlRootElement 
 public class Product {
-	@Pattern(regexp="P[0-9]+", message="{Pattern.Product.productId.validation}")
-	@ProductId
+
+	@Pattern(regexp="P[1-9]+", message="{Pattern.Product.productId.validation}")
+	@ProductId 
 	private String productId;
+	
 	@Size(min=4, max=50, message="{Size.Product.name.validation}")
 	private String name;
+	
 	@Min(value=0, message="Min.Product.unitPrice.validation}")
 	@Digits(integer=8, fraction=2, message="{Digits.Product.unitPrice.validation}")
 	@NotNull(message= "{NotNull.Product.unitPrice.validation}")
@@ -33,7 +36,9 @@ public class Product {
 	private long unitsInOrder;
 	private boolean discontinued;
 	private String condition;
-	private MultipartFile productImage;
+	@JsonIgnore 
+	private MultipartFile  productImage;
+
 	public Product() {
 		super();
 }
@@ -70,6 +75,15 @@ public class Product {
 
 	public String getDescription() {
 		return description;
+	}
+
+	@XmlTransient  
+	public MultipartFile getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
 	}
 
 	public void setDescription(String description) {
@@ -122,14 +136,6 @@ public class Product {
 
 	public void setCondition(String condition) {
 		this.condition = condition;
-	}
-	@XmlTransient
-	public @JsonIgnore MultipartFile getProductImage() {		
-		return productImage;
-	}
-
-	public void setProductImage(MultipartFile productImage) {
-		this.productImage = productImage;
 	}
 
 	@Override

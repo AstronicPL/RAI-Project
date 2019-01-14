@@ -10,7 +10,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -30,7 +29,6 @@ import com.packt.webstore.exception.NoProductsFoundUnderCategoryException;
 import com.packt.webstore.exception.ProductNotFoundException;
 import com.packt.webstore.service.ProductService;
 import com.packt.webstore.validator.ProductValidator;
-import com.packt.webstore.validator.UnitsInStockValidator;
 
 @Controller
 @RequestMapping("/products")
@@ -38,8 +36,10 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService productService;
+	
 	@Autowired
 	private ProductValidator productValidator;
+
 	@RequestMapping
 	public String list(Model model) {
 		model.addAttribute("products", productService.getAllProducts());
@@ -57,13 +57,16 @@ public class ProductController {
 	
 	@RequestMapping("/{category}")
 	public String getProductsByCategory(Model model, @PathVariable("category") String category) {
-	   List<Product> products = productService.getProductsByCategory(category);
-	   if (products == null || products.isEmpty()) {
-	      throw new NoProductsFoundUnderCategoryException();
-	   }
-	   model.addAttribute("products", products);
-	   return "products";
+		List<Product> products = productService.getProductsByCategory(category);
+
+		if (products == null || products.isEmpty()) {
+			throw new NoProductsFoundUnderCategoryException();
+		}
+
+		model.addAttribute("products", products);
+		return "products";
 	}
+
 	
 	@RequestMapping("/filter/{ByCriteria}")
 	public String getProductsByFilter(@MatrixVariable(pathVar="ByCriteria") Map<String,List<String>> filterParams, Model model) {
@@ -72,10 +75,12 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/product")
-	public String getProductById(@RequestParam("id") String productId, Model model) {
-		model.addAttribute("product", productService.getProductById(productId));
+	public String getProductById(Model model, @RequestParam("id") String productId) {
+		Product product = productService.getProductById(productId);
+		model.addAttribute("product", product);
 		return "product";
 	}
+
 	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String getAddNewProductForm(@ModelAttribute("newProduct") Product newProduct) {
@@ -84,22 +89,28 @@ public class ProductController {
 	   
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String processAddNewProductForm(@ModelAttribute("newProduct") @Valid Product productToBeAdded, BindingResult result, HttpServletRequest request) {
-		String[] suppressedFields = result.getSuppressedFields();
 		if(result.hasErrors()) {
-			   return "addProduct";
-			}
+			return "addProduct";
+		}
+
+		String[] suppressedFields = result.getSuppressedFields();
+		
 		if (suppressedFields.length > 0) {
 			throw new RuntimeException("Próba wi¹zania niedozwolonych pól: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
 		}
+		
 		MultipartFile productImage = productToBeAdded.getProductImage();
 		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-		if (productImage!=null && !productImage.isEmpty()) {
-		   try {
-		      productImage.transferTo(new File(rootDirectory+"resources\\images\\"+productToBeAdded.getProductId() + ".png"));
-		   } catch (Exception e) {
-		      throw new RuntimeException("Niepowodzenie podczas próby zapisu obrazka produktu", e);
+				
+			if (productImage!=null && !productImage.isEmpty()) {
+		       try {
+		      	productImage.transferTo(new File(rootDirectory+"resources\\images\\"+productToBeAdded.getProductId() + ".png"));
+		       } catch (Exception e) {
+				throw new RuntimeException("Próba zapisu obrazka zakoñczona niepowodzeniem", e);
 		   }
-		}
+		   }
+
+		
 	   	productService.addProduct(productToBeAdded);
 		return "redirect:/products";
 	}
@@ -107,19 +118,24 @@ public class ProductController {
 	@InitBinder
 	public void initialiseBinder(WebDataBinder binder) {
 		binder.setValidator(productValidator);
-		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "condition", "productImage","language");
+		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "condition","productImage","language");
 	}
+	
 	@ExceptionHandler(ProductNotFoundException.class)
 	public ModelAndView handleError(HttpServletRequest req, ProductNotFoundException exception) {
-	   ModelAndView mav = new ModelAndView();
-	   mav.addObject("invalidProductId", exception.getProductId());
-	   mav.addObject("exception", exception);
-	   mav.addObject("url", req.getRequestURL()+"?"+req.getQueryString());
-	   mav.setViewName("productNotFound");
-	   return mav;
+		 ModelAndView mav = new ModelAndView();
+		 mav.addObject("invalidProductId", exception.getProductId());
+		 mav.addObject("exception", exception);
+		 mav.addObject("url", req.getRequestURL()+"?"+req.getQueryString());
+		 mav.setViewName("productNotFound");
+		 return mav;
 	}
+	
 	@RequestMapping("/invalidPromoCode")
 	public String invalidPromoCode() {
-	   return "invalidPromoCode";
+			return "invalidPromoCode";
 	}
+
+
+
 }
