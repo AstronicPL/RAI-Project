@@ -26,12 +26,12 @@ public class AuditingInterceptor extends HandlerInterceptorAdapter {
 
 	public void afterCompletion(HttpServletRequest request,	HttpServletResponse response, Object handler, Exception arg3) throws Exception {
 		if(request.getRequestURI().endsWith("products/add") && response.getStatus()==302){
-			logger.info(String.format("Nowy produkt [%s] dodany przez %s dnia %s", productId, user, getCurrentTime()));
+			logger.info(String.format("A New product[%s] Added by %s on %s", productId, user, getCurrentTime()));
 		}
 	}
 	
 	private String getCurrentTime() {
-		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy 'o' hh:mm:ss");
+		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy 'at' hh:mm:ss");
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeInMillis(System.currentTimeMillis());
 		return formatter.format(calendar.getTime());

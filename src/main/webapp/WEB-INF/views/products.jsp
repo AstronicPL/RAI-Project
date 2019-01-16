@@ -28,7 +28,7 @@
 						<div class="caption">
 							<h3>${product.name}</h3>
 							<p>${product.description}</p>
-							<p>${product.unitPrice} PLN</p>
+							<p>${product.unitPrice}PLN</p>
 							<p>Liczba sztuk w magazynie: ${product.unitsInStock}</p>
 							<p>
 								<a

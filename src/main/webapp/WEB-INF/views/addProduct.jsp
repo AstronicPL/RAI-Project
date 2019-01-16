@@ -18,7 +18,7 @@
 			</div>
 			<a href="<c:url value="/j_spring_security_logout" />" class="btn btn-danger btn-mini pull-right">wyloguj</a>	
 			<div class="pull-right" style="padding-right:50px">
-				<a href="?language=pl" >polski</a>|<a href="?language=nl" >holenderski</a>					
+				<a href="?language=pl" >polski</a>|<a href="?language=nl" >duński</a>					
 			</div>
 			
 		</div>
