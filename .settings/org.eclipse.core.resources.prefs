@@ -3,4 +3,5 @@ encoding//src/main/java/com/packt/webstore/controller/CartRestController.java=UT
 encoding//src/main/java/com/packt/webstore/validator/ProductIdValidator.java=UTF-8
 encoding//src/main/webapp/WEB-INF/flows/checkout/InvalidCartWarning.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/flows/checkout/collectCustomerInfo.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/tiles/template/footer.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/cart.jsp=UTF-8

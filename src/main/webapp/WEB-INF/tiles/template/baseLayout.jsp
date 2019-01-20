@@ -17,6 +17,10 @@
 
 <link href="http://getbootstrap.com/examples/jumbotron/jumbotron.css"	rel="stylesheet">
 
+    <style>      
+
+     
+    </style>
 </head>
 
 <body>
@@ -26,12 +30,13 @@
 			<ul class="nav nav-pills pull-right">
 				<tiles:insertAttribute name="navigation" />
 			</ul>
-			<h3 class="text-muted">Sklep internetowy BiznesJanusz</h3>
+			<h3 class="text-dark">Sklep internetowy BiznesJanusz</h3>
 		</div>
 
-		<div class="jumbotron">
+		<div class="jumbotron ">
 			<h1>
-				<tiles:insertAttribute name="heading" />
+			
+			<tiles:insertAttribute name="heading" />
 			</h1>
 			<p>
 				<tiles:insertAttribute name="tagline" />
@@ -45,7 +50,7 @@
 		<div class="footer">
 			<tiles:insertAttribute name="footer" />
 		</div>
-
+		
 	</div>
 </body>
 </html>

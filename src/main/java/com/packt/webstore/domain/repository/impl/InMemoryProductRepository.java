@@ -19,14 +19,14 @@ public class InMemoryProductRepository implements ProductRepository{
 	private List<Product> listOfProducts = new ArrayList<Product>();
 	
 	public InMemoryProductRepository() {
-		Product iphone = new Product("P1234","iPhone 5s", new BigDecimal(500));
-	    iphone.setDescription("Apple iPhone 5s, smartfon z 4-calowym ekranem o rozdzielczoœci 640×1136 i 8-megapikselowym aparatem");
+		Product iphone = new Product("P1234","iPhoneX", new BigDecimal(3799));
+	    iphone.setDescription("W iPhone X 64 GB Srebrnym ziœci³o siê marzenie Apple o smartfonie, który w ca³oœci bêdzie ekranem.");
 	    iphone.setCategory("smartfon");
 	    iphone.setManufacturer("Apple");
-	    iphone.setUnitsInStock(1000);
+	    iphone.setUnitsInStock(420);
 
-	    Product laptop_dell = new Product("P1235","Dell Inspiron", new BigDecimal(700));
-	    laptop_dell.setDescription("Dell Inspiron, 14-calowy laptop (czarny) z procesorami Intel Core 3. generacji");
+	    Product laptop_dell = new Product("P1235","Dell Inspiron", new BigDecimal(2700));
+	    laptop_dell.setDescription("Dell Inspiron, 14-calowy laptop (czarny) z procesorami Intel Core i3 8. generacji");
 	    laptop_dell.setCategory("laptop");
 	    laptop_dell.setManufacturer("Dell");
 	    laptop_dell.setUnitsInStock(1000);

@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(value = "/cart")
 public class CartController {
-
+	/**
+	 * kontroler pozwalajacy wyswietlic odpowiedni koszyk przypisany do uzytkownika
+	
+	 */
 	@RequestMapping
 	public String get(HttpServletRequest request) {
 		return "redirect:/cart/"+request.getSession(true).getId();
