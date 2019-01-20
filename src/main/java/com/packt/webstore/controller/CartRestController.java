@@ -96,6 +96,6 @@ public class CartRestController {
 	public void handleClientErrors(Exception ex) { }
 
 	@ExceptionHandler(Exception.class)
-	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason="Wewnêtrzy b³¹d serwera")
+	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason="Wewnêtrzny b³¹d serwera")
 	public void handleServerErrors(Exception ex) {	}
 }

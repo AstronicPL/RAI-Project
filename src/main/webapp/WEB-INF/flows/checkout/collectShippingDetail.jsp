@@ -1,3 +1,4 @@
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -7,38 +8,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Klient</title>
+<title>Wysyłka</title>
 </head>
 <body>
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Dostawa</h1>
-				<p>Szczegoly dostawy</p>
+				<h1>Wysyłka</h1>
+				<p>Dane do wysyłki</p>
 			</div>
 		</div>
 	</section>
 	<section class="container">
 		<form:form modelAttribute="order.shippingDetail" class="form-horizontal">
 			<fieldset>
-				<legend>Szczegoly dostawy</legend>
+				<legend>Dane do wysyłki</legend>
 				
 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="name" />Imie</label>
+					<label class="control-label col-lg-2 col-lg-2" for="name" />Imię i nazwisko</label>
 					<div class="col-lg-10">
 						<form:input id="name" path="name" type="text" class="form:input-large" />
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="shippingDate" />Data dostawy (dd/mm/yyyy)</label>
+					<label class="control-label col-lg-2 col-lg-2" for="shippingDate" />Data wysyłki (dd/mm/rrrr)</label>
 					<div class="col-lg-10">
 						<form:input id="shippingDate" path="shippingDate" type="text" class="form:input-large" />
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="doorNo">Numer domu/mieszkania</label>
+					<label class="control-label col-lg-2" for="doorNo">Numer domu</label>
 					<div class="col-lg-10">
 						<form:input id="doorNo" path="shippingAddress.doorNo" type="text"
 							class="form:input-large" />
@@ -46,7 +47,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="streetName">Nazwa ulicy/miejscowosci</label>
+					<label class="control-label col-lg-2" for="streetName">Ulica</label>
 					<div class="col-lg-10">
 						<form:input id="streetName" path="shippingAddress.streetName." type="text"
 							class="form:input-large" />
@@ -54,7 +55,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="areaName">Poczta</label>
+					<label class="control-label col-lg-2" for="areaName">Miasto</label>
 					<div class="col-lg-10">
 						<form:input id="areaName" path="shippingAddress.areaName" type="text"
 							class="form:input-large" />
@@ -62,7 +63,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="state">Wojewodztwo</label>
+					<label class="control-label col-lg-2" for="state">Województwo</label>
 					<div class="col-lg-10">
 						<form:input id="state" path="shippingAddress.state" type="text"
 							class="form:input-large" />
@@ -92,7 +93,7 @@
 						<button id="back" class="btn btn-default" name="_eventId_backToCollectCustomerInfo">wstecz</button>
 						
 						<input type="submit" id="btnAdd" class="btn btn-primary"
-							value="Dalej"  name="_eventId_shippingDetailCollected"/>
+							value="Dodaj"  name="_eventId_shippingDetailCollected"/>
 						<button id="btnCancel" class="btn btn-default" name="_eventId_cancel">Anuluj</button>
 					</div>
 				</div>

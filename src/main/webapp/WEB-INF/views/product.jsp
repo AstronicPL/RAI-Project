@@ -10,14 +10,7 @@
 	<script src="/webstore/resource/js/controllers.js"></script>
 <title>Produkty</title>
 </head>
-<body>
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Produkty</h1>
-			</div>
-		</div>
-	</section>
+
 	<section class="container" ng-app="cartApp">
 		<div class="row">
 		<div class="col-md-5">
@@ -28,21 +21,21 @@
 				<h3>${product.name}</h3>
 				<p>${product.description}</p>
 				<p>
-					<strong>Identyfikator produktu : </strong><span class="label label-warning">${product.productId}</span>
+					<strong>Identyfikator produktu: </strong><span class="label label-warning">${product.productId}</span>
 				</p>
 				<p>
-					<strong>Producent</strong> : ${product.manufacturer}
+					<strong>Producent</strong>: ${product.manufacturer}
 				</p>
 				<p>
-					<strong>Kategoria</strong> : ${product.category}
+					<strong>Kategoria</strong>: ${product.category}
 				</p>
 				<p>
-					<strong>Stan</strong> : ${product.condition}
+					<strong>Stan</strong>: ${product.condition}
 				</p>
 				<p>
-					<strong>Liczba sztuk w magazynie </strong> : ${product.unitsInStock}
+					<strong>Liczba sztuk w magazynie</strong>: ${product.unitsInStock}
 				</p>
-				<h4>${product.unitPrice}PLN</h4>
+				<h4>${product.unitPrice} PLN</h4>
 				<p ng-controller="cartCtrl">
 					<a href="#" class="btn btn-warning btn-large" ng-click="addToCart('${product.productId}')"> 
 <span class="glyphicon-shopping-cart glyphicon"></span> Zamów teraz </a>
@@ -59,5 +52,4 @@
 			</div>
 		</div>
 	</section>
-</body>
 </html>

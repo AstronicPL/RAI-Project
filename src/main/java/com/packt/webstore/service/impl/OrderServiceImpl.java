@@ -27,7 +27,7 @@ public class OrderServiceImpl implements OrderService{
 		Product productById = productRepository.getProductById(productId);
 		
 		if(productById.getUnitsInStock() < quantity){
-			throw new IllegalArgumentException("Out of Stock. Available Units in stock"+ productById.getUnitsInStock());
+			throw new IllegalArgumentException("Zbyt ma³o towaru. Obecna liczba sztuk w magazynie "+ productById.getUnitsInStock());
 		}
 		
 		productById.setUnitsInStock(productById.getUnitsInStock() - quantity);

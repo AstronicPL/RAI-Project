@@ -8,14 +8,7 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <title>Błędny kod promocyjny</title>
 </head>
-<body>
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1 class="alert alert-danger"> Błędny kod promocyjny</h1>
-			</div>
-		</div>
-	</section>
+
 
 	<section>
 		<div class="container">
@@ -27,5 +20,4 @@
 		</div>
 		
 	</section>
-</body>
 </html>

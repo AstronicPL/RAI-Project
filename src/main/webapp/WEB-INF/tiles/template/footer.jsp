@@ -1,0 +1,1 @@
+<p>&copy; Janusz Glab 2019</p>

@@ -9,16 +9,6 @@
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <title>Produkty</title>
 </head>
-<body>
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Produkty</h1>
-				<p>Wszystkie produkty dostępne w naszym sklepie</p>
-			</div>
-		</div>
-	</section>
-
 	<section class="container">
 		<div class="row">
 			<c:forEach items="${products}" var="product">
@@ -28,8 +18,8 @@
 						<div class="caption">
 							<h3>${product.name}</h3>
 							<p>${product.description}</p>
-							<p>${product.unitPrice}PLN</p>
-							<p>Liczba sztuk w magazynie: ${product.unitsInStock}</p>
+							<p>${product.unitPrice} PLN</p>
+							<p>Liczba dostępnych sztuk: ${product.unitsInStock}</p>
 							<p>
 								<a
 									href=" <spring:url value="/products/product?id=${product.productId}" /> "
@@ -44,5 +34,4 @@
 			</c:forEach>
 		</div>
 	</section>
-</body>
 </html>

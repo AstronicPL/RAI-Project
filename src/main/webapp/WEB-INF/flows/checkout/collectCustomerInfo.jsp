@@ -1,3 +1,4 @@
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -31,14 +32,14 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="name">Imie</label>
+					<label class="control-label col-lg-2" for="name">Imię i nazwisko</label>
 					<div class="col-lg-10">
 						<form:input id="name" path="name" type="text" class="form:input-large" />
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="doorNo">Numer domu/mieszkania</label>
+					<label class="control-label col-lg-2" for="doorNo">Numer domu</label>
 					<div class="col-lg-10">
 						<form:input id="doorNo" path="billingAddress.doorNo" type="text"
 							class="form:input-large" />
@@ -46,7 +47,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="streetName">Nazwa ulicy/miejscowosci</label>
+					<label class="control-label col-lg-2" for="streetName">Ulica</label>
 					<div class="col-lg-10">
 						<form:input id="streetName" path="billingAddress.streetName." type="text"
 							class="form:input-large" />
@@ -54,7 +55,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="areaName">Poczta</label>
+					<label class="control-label col-lg-2" for="areaName">Miasto</label>
 					<div class="col-lg-10">
 						<form:input id="areaName" path="billingAddress.areaName" type="text"
 							class="form:input-large" />
@@ -62,7 +63,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="state">Wojewodztwo</label>
+					<label class="control-label col-lg-2" for="state">Województwo</label>
 					<div class="col-lg-10">
 						<form:input id="state" path="billingAddress.state" type="text"
 							class="form:input-large" />
@@ -98,7 +99,7 @@
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
 						<input type="submit" id="btnAdd" class="btn btn-primary"
-							value="Add" name="_eventId_customerInfoCollected" />
+							value="Dodaj" name="_eventId_customerInfoCollected" />
 						<button id="btnCancel" class="btn btn-default" name="_eventId_cancel">Anuluj</button>
 					</div>
 				</div>

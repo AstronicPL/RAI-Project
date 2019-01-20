@@ -13,16 +13,6 @@
 
 <title>Koszyk</title>
 </head>
-<body>
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Koszyk</h1>
-				<p>Produkty w Twoim koszyku</p>
-			</div>
-		</div>
-	</section>
-
 	<section class="container" ng-app="cartApp">
 		<div ng-controller="cartCtrl" ng-init="initCartId('${cartId}')">
 
@@ -37,17 +27,16 @@
 			<table class="table table-hover">
 				<tr>
 					<th>Produkt</th>
-          <th>Cena za sztukę</th>
-          <th>Liczba sztuk</th>
-          <th>Cena</th>
-          <th>Akcja</th>
-
+                    <th>Cena za sztukę</th>
+                    <th>Liczba sztuk</th>
+                    <th>Cena</th>
+                    <th>Akcja</th>
 				</tr>
 				<tr ng-repeat="item in cart.cartItems">
 					<td>{{item.product.productId}}-{{item.product.name}}</td>
-					<td>{{item.product.unitPrice}} PLN</td>
+					<td>{{item.product.unitPrice}}</td>
 					<td>{{item.quantity}}</td>
-					<td>{{item.totalPrice}} PLN</td>
+					<td>{{item.totalPrice}}</td>
 					<td><a href="#" class="label label-danger" ng-click="removeFromCart(item.product.productId)"> <span
 							class="glyphicon glyphicon-remove" /></span> Usuń
 					</a></td>
@@ -55,16 +44,15 @@
 				<tr>
 					<th></th>
 					<th></th>
-					<th>Łączna cena</th>
+					<th>Razem</th>
 					<th>{{cart.grandTotal}} PLN</th>
 					<th></th>
 				</tr>
 			</table>
 			
 			<a href="<spring:url value="/products" />" class="btn btn-default">
-						<span class="glyphicon-hand-left glyphicon"></span> Wróć do zakupów
+						<span class="glyphicon-hand-left glyphicon"></span> Kontynuuj zakupy
 			</a>
 		</div>
 	</section>
-</body>
 </html>
