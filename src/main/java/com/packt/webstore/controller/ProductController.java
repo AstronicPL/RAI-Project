@@ -29,7 +29,10 @@ import com.packt.webstore.exception.NoProductsFoundUnderCategoryException;
 import com.packt.webstore.exception.ProductNotFoundException;
 import com.packt.webstore.service.ProductService;
 import com.packt.webstore.validator.ProductValidator;
+/**
+ * Kontroler odpowiedzailny jest za "obsluge" produktów. Odpowiada za ich wyœwietlanie, sortowanie, dodawanie, aktywowanie kodow rabatowych... 
 
+ */
 @Controller
 @RequestMapping("/products")
 public class ProductController {

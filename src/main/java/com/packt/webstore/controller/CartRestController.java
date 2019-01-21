@@ -18,7 +18,11 @@ import com.packt.webstore.domain.Product;
 import com.packt.webstore.exception.ProductNotFoundException;
 import com.packt.webstore.service.CartService;
 import com.packt.webstore.service.ProductService;
+/**
+ * kontroler obśługujący sieciowe usługi REST. Zawiera operacje takie jak create/read/update/delete odnoszace się do obiektów typu Cart
+ * Kontroler posiada równiez dwie metody addItem/removeItem obsługujace dodawanie oraz usuwanie obiektów CartItem
 
+ */
 @Controller
 @RequestMapping(value = "rest/cart")
 public class CartRestController {

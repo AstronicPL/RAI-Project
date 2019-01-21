@@ -15,10 +15,13 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.packt.webstore.validator.ProductId;
+/**
+ * Klassa zawiera settery oraz gettery dotyczace produktu. Zawiera rowniez metode sprawdzaj¹c¹ poprawnoœæ danych
 
+ */
 @XmlRootElement 
 public class Product implements Serializable{
-
+	
 	private static final long serialVersionUID = 3678107792576131001L;
 
 	@Pattern(regexp="P[1-9]+", message="{Pattern.Product.productId.validation}")

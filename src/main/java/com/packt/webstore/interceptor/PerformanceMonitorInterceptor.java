@@ -9,9 +9,12 @@ import org.apache.log4j.Logger;
 import org.springframework.util.StopWatch;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+/**
+ * Klassa odpowiedzialna jest za wyœwietalnie danych w konsoli na temat aktualnych ¿¹dañ 
 
+ */
 public class PerformanceMonitorInterceptor implements HandlerInterceptor {
-
+	
 	ThreadLocal<StopWatch> stopWatchLocal = new ThreadLocal<StopWatch>();
 	Logger logger = Logger.getLogger(this.getClass());
 

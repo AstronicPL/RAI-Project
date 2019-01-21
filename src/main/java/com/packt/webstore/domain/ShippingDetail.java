@@ -3,9 +3,12 @@ package com.packt.webstore.domain;
 import java.io.Serializable;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
+/**
+ * Klassa zawiera settery oraz gettery odpowiedzialne za wyswietalnie podsumowania zamówienia w formie paragonu
 
+ */
 public class ShippingDetail implements Serializable{
-
+	
 	private static final long serialVersionUID = 6350930334140807514L;
 	
 	private String name;

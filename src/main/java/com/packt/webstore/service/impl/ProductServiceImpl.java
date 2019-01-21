@@ -10,7 +10,10 @@ import org.springframework.stereotype.Service;
 import com.packt.webstore.domain.Product;
 import com.packt.webstore.domain.repository.ProductRepository;
 import com.packt.webstore.service.ProductService;
+/**
+ * Klasa odpowiada za twrzenie listy produktowej. 
 
+ */
 @Service
 public class ProductServiceImpl implements ProductService{
 	

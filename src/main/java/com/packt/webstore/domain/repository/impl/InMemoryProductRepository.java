@@ -12,7 +12,11 @@ import org.springframework.stereotype.Repository;
 import com.packt.webstore.domain.Product;
 import com.packt.webstore.domain.repository.ProductRepository;
 import com.packt.webstore.exception.ProductNotFoundException;
+/**
+ * Repozytorium przechowywuj¹ce informacje o produktach. Zawiera trzy zdefiniowane produkty "domyœlne" 
+ * 
 
+ */
 @Repository
 public class InMemoryProductRepository implements ProductRepository{
 	

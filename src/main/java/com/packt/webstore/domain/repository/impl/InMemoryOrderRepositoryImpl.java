@@ -5,7 +5,10 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 import com.packt.webstore.domain.Order;
 import com.packt.webstore.domain.repository.OrderRepository;
+/**
+ * Klasa odpowiedzialna za przechowywanie informacji o zamówieniach
 
+ */
 @Repository
 public class InMemoryOrderRepositoryImpl implements OrderRepository{
 

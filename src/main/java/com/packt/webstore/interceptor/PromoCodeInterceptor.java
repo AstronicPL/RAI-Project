@@ -3,7 +3,10 @@ package com.packt.webstore.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+/**
+ * Klassa odpowiedzailna jest za poprawnoœæ dzia³ania kodów promocyjnych
 
+ */
 public class PromoCodeInterceptor extends HandlerInterceptorAdapter {
 	
 	private String promoCode;

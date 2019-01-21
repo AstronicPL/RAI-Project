@@ -7,7 +7,10 @@ import com.packt.webstore.domain.Cart;
 import com.packt.webstore.domain.repository.CartRepository;
 import com.packt.webstore.exception.InvalidCartException;
 import com.packt.webstore.service.CartService;
+/**
+ * Klasa obs³ugujê zdarzenia zachodz¹ce w karcie produktowej. Zawiera równie¿ prost¹ validacjê
 
+ */
 @Service
 public class CartServiceImpl implements CartService{
 	

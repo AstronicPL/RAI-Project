@@ -9,7 +9,10 @@ import com.packt.webstore.domain.repository.OrderRepository;
 import com.packt.webstore.domain.repository.ProductRepository;
 import com.packt.webstore.service.CartService;
 import com.packt.webstore.service.OrderService;
+/**
+ * Klasa sprawdza poprawnoœæ danych przy obs³udze zamówienia oraz posiada metodê odpowiedzialn¹ za zapis zamówienia.
 
+ */
 @Service
 public class OrderServiceImpl implements OrderService{
 

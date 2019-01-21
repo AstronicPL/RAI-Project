@@ -1,9 +1,12 @@
 package com.packt.webstore.domain;
 
 import java.io.Serializable;
+/**
+ * Klassa Adress zawiera settery oraz gettery do pól wykorzystywanych przy tworzeniu miêdzy innymi zamówienia. Sprawdzane s¹ równie¿ wyj¹tki dotycz¹ce adresu
 
+ */
 public class Address implements Serializable{
-
+	
 	private static final long serialVersionUID = -530086768384258062L;
 	
 	private String doorNo;

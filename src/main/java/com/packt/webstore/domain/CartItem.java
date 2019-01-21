@@ -2,9 +2,12 @@ package com.packt.webstore.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+/**
+ * Klassa zawiera settery oraz gettery dotycz¹ce karty produktowej. Zawiera równiez proste sprawdzanie wyj¹tków
 
+ */
 public class CartItem implements Serializable{
-
+	
 	private static final long serialVersionUID = -4314427089896169685L;
 	
 	private Product product;

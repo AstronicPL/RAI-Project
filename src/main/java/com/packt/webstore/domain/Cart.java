@@ -4,9 +4,12 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+/**
+ * Klassa zawiera settery oraz gettery u¿ywanych przy karcie produktowej w obs³udze zamówienia. Zawiera równie¿ metody dotycz¹ce dodania produktu do koszyka, usuniêcia go oraz tak¹ która s³u¿y "podliczeniu" zamówienia
 
+ */
 public class Cart implements Serializable{
-
+	
 	private static final long serialVersionUID = -4045729241960416615L;
 	
 	private String cartId;

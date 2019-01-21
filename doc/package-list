@@ -1,1 +1,9 @@
 com.packt.webstore.controller
+com.packt.webstore.domain
+com.packt.webstore.domain.repository
+com.packt.webstore.domain.repository.impl
+com.packt.webstore.exception
+com.packt.webstore.interceptor
+com.packt.webstore.service
+com.packt.webstore.service.impl
+com.packt.webstore.validator

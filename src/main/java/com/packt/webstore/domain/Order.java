@@ -1,9 +1,11 @@
 package com.packt.webstore.domain;
 
 import java.io.Serializable;
-
+/**
+ * Klassa zawiera settery oraz gettery dotycz¹ce samego zamówienia. Sprawdza równie¿ poprawnoœæ danych
+ */
 public class Order  implements Serializable{
-
+	
 	private static final long serialVersionUID = -3560539622417210365L;
 	
 	private Long orderId;

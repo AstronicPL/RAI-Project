@@ -5,7 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.packt.webstore.service.OrderService;
+/**
+ * kontroler obs³uguj¹cy zamówienie
 
+ */
 @Controller
 public class OrderController {
 	

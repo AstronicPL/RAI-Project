@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"com.packt.webstore.controller"}]
+packageSearchIndex = [{"l":"com.packt.webstore.controller"},{"l":"com.packt.webstore.domain"},{"l":"com.packt.webstore.domain.repository"},{"l":"com.packt.webstore.domain.repository.impl"},{"l":"com.packt.webstore.exception"},{"l":"com.packt.webstore.interceptor"},{"l":"com.packt.webstore.service"},{"l":"com.packt.webstore.service.impl"},{"l":"com.packt.webstore.validator"}]

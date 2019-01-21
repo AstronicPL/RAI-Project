@@ -5,7 +5,11 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 import com.packt.webstore.domain.Cart;
 import com.packt.webstore.domain.repository.CartRepository;
+/**
+ * repozytorium przechowywujace informacje o obiektach typu Cart. 
+ * Zawiera metody pozwalaj¹ce na tworzenie / odczytywanie /aktualizowanie / kasowanie obiektów typu Cart.
 
+ */
 @Repository
 public class InMemoryCartRepository implements CartRepository{
 	

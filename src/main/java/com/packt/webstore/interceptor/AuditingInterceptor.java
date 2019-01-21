@@ -7,9 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+/**
+ * Klassa odpowiada za sprawdzanie uwierzytelnienia u¿ytkownia. Pozwala rownie¿ na przechowywanie informacji o dodawanych produktach
 
+ */
 public class AuditingInterceptor extends HandlerInterceptorAdapter {
-
+	
 	Logger logger = Logger.getLogger("auditLogger");
 	private String user;
 	private String productId;
